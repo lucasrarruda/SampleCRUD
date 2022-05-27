@@ -9,6 +9,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using Microsoft.UI.Xaml.Shapes;
 using SampleCRUD.View.Views;
+using SampleCRUD.ViewModel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -44,7 +45,11 @@ namespace SampleCRUD
         {
             ServiceCollection services = new ServiceCollection();
 
-            //services.AddScoped<>();
+            services.AddTransient<MenuViewModel>();
+            services.AddTransient<CreateViewModel>();
+            services.AddTransient<ReadViewModel>();
+            services.AddTransient<UpdateViewModel>();
+            services.AddTransient<DeleteViewModel>();
 
             Ioc.Default.ConfigureServices(services.BuildServiceProvider());
         }
@@ -58,36 +63,17 @@ namespace SampleCRUD
         {
             m_window = new MainWindow();
 
-            //Frame rootFrame = Window.Current.Content as Frame;
+            Frame rootFrame = new Frame();
+            //rootFrame.Navigated += OnNavigated;
+            //rootFrame.NavigationFailed += OnNavigationFailed;
 
-            //if (rootFrame == null)
-            //{
-            //    rootFrame = new Frame();
-            //    rootFrame.NavigationFailed += OnNavigationFailed;
-            //    rootFrame.Navigated += OnNavigated;
+            m_window.Content = rootFrame;
 
-            //    m_window.Content = rootFrame;
-            //}
-
-            
-
-            if (rootFrame.Content == null)
-            {
-                rootFrame.Navigate(typeof(MenuView), args.Arguments);
-            }
+            rootFrame.Navigate(typeof(MenuView), args.Arguments);
 
             m_window.Activate();
         }
 
-        private void OnNavigated(object sender, NavigationEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private Window m_window;
     }

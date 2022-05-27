@@ -7,7 +7,11 @@
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Views\CreateView.xaml" />
+    <None Remove="Views\DeleteView.xaml" />
     <None Remove="Views\MenuView.xaml" />
+    <None Remove="Views\ReadView.xaml" />
+    <None Remove="Views\UpdateView.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +23,30 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SampleCRUD.ViewModel\SampleCRUD.ViewModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\DeleteView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\UpdateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\ReadView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\CreateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
