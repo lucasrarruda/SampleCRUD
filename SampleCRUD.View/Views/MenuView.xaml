@@ -7,12 +7,29 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5,2.5"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+    </Page.Resources>
+    
     <Grid>
-        <TextBlock x:Name="txbTitle" Text="Sample CRUD"/>
-        <Button x:Name="btnCreate" Content="Create"/>
-        <Button x:Name="btnRead" Content="Read"/>
-        <Button x:Name="btnUpdate" Content="Update"/>
-        <Button x:Name="btnDelete" Content="Delete"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="txbTitle" Text="Sample CRUD" HorizontalAlignment="Center"
+                   Margin="20" FontSize="32" FontWeight="Bold"/>
+        <StackPanel Name="stpMenu" Grid.Row="1" HorizontalAlignment="Center" Orientation="Vertical"
+                    BorderThickness="2" Width="180" Padding="0,2.5">
+            <StackPanel.BorderBrush>
+                <SolidColorBrush Color="LightSlateGray" Opacity="0.5"/>
+            </StackPanel.BorderBrush>
+            <Button x:Name="btnCreate" Content="Create"/>
+            <Button x:Name="btnRead" Content="Read"/>
+            <Button x:Name="btnUpdate" Content="Update"/>
+            <Button x:Name="btnDelete" Content="Delete"/>
+        </StackPanel>
     </Grid>
 </Page>
