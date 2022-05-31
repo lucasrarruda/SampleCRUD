@@ -4,6 +4,7 @@ using Microsoft.UI.Xaml;
 using SampleCRUD.View.Views;
 using System;
 using Windows.Foundation;
+using Windows.Graphics;
 using Windows.UI.ViewManagement;
 using WinRT.Interop;
 
@@ -36,12 +37,7 @@ namespace SampleCRUD
 
             if (_appWindow != null)
             {
-                Windows.Graphics.RectInt32 rect = new Windows.Graphics.RectInt32();
-                rect.X = 100;
-                rect.Y = 100;
-                rect.Width = 350;
-                rect.Height = 340;
-                _appWindow.MoveAndResize(rect);
+                _appWindow.Resize(new SizeInt32(350, 340));
             }
         }
     }

@@ -20,7 +20,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock x:Name="txbTitle" Text="Sample CRUD" HorizontalAlignment="Center"
-                   Margin="20" FontSize="32" FontWeight="Bold"/>
+                   Margin="0,40,0,10" FontSize="32" FontWeight="Bold"/>
         <StackPanel Name="stpMenu" Grid.Row="1" HorizontalAlignment="Center" Orientation="Vertical"
                     BorderThickness="2" Width="180" Padding="0,2.5">
             <StackPanel.BorderBrush>
